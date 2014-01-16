@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				margin: 48px;
+				background: #000;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			/*
+			 * Be sure to set the banner to overflow:hidden;.
+			 */
+			div#banner {
+				width: 900px;
+				height: 200px;
+				margin: 0px auto;
+				border: #639 1px solid;
+				overflow: hidden; /* make anything moved out of the box invisible */
+			}
+			/* 
+			 * Make the width of your banner_backdrop the width of your banner plus 
+			 * the width of your repeating tile image.
+			 * 
+			 * Then loops over and over seamlessly to produce a smooth fluid effect.
+			 */
+			div#banner > #banner_backdrop {
+				position: relative;
+				background: url(repeater.jpg) repeat-x; /* image size 300 x 168 */
+				width: 1200px; /* 900 + 300 */
+				height: 200px;
+				-webkit-animation: backdrop_roll linear 12s infinite;
+				-moz-animation: backdrop_roll linear 12s infinite;
+				-ms-animation: backdrop_roll linear 12s infinite;
+				-o-animation: backdrop_roll linear 12s infinite;
+				animation: backdrop_roll linear 12s infinite;
+			} 
+			
+			/*
+			 * Animate the banner_backdrop either right or left, 
+			 * only the distance enough to reach the next tile. 
+			 */
+			@-webkit-keyframes backdrop_roll {
+			from {
+				right: 0px;
+			}
+			to {
+				right: 300px;
+			} } 
+			
+			@-moz-keyframes
+			backdrop_roll {from {
+				right: 0px;
+			}
+			to {
+				right: 300px;
+			} }
+			
+			@-ms-keyframes
+			backdrop_roll {from {
+				right: 0px;
+			}
+			to {
+				right: 300px;
+			} } 
+			
+			@-o-keyframes
+			backdrop_roll {from {
+				right: 0px;
+			}
+			to {
+				right: 300px;
+			} } 
+			
+			@keyframes
+			backdrop_roll {from {
+				right: 0px;
+			}
+			to {
+				right: 300px;
+			} }
+			
+			div#banner > #banner_content {
+				position: relative;
+				width: 96%;
+				height: 160px;
+				margin: 20px auto;
+				top: -200px;
+				color: #FFF;
+				font-size: 27px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="banner">
+			<div id="banner_backdrop"></div>
+			<div id="banner_content">
+				Put anything you want inside this box...
+			</div>
+		</div>
+	</body>
+</html>
